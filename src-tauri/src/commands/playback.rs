@@ -1,13 +1,16 @@
 use crate::db::{queries, mutations, models::Channel};
 use crate::error::AppError;
 use crate::playback;
-use crate::state::AppState;
+use crate::state::{AppState, CurrentChannel};
 use log::{info, warn};
 use tauri::State;
 
 #[tauri::command]
 pub async fn check_mpv_installed() -> Result<bool, AppError> {
-    Ok(playback::check_mpv_installed())
+    // check_installed() spawns `mpv --version` and blocks on it
+    tokio::task::spawn_blocking(playback::check_mpv_installed)
+        .await
+        .map_err(|e| AppError::Mpv(format!("mpv task panicked: {e}")))
 }
 
 #[tauri::command]
@@ -28,16 +31,18 @@ pub async fn play_channel(state: State<'_, AppState>, channel: Channel) -> Resul
         (audio, subtitle)
     };
 
+    let name = channel.name.clone();
+    let url = channel.url.clone();
+    playback::with_player(&state.mpv_player, move |player| {
+        player
+            .play_with_title(&url, Some(&name), audio_lang.as_deref(), subtitle_lang.as_deref())
+            .map_err(|e| AppError::Mpv(e.to_string()))
+    })
+    .await?;
+
     {
-        let mut player = state.mpv_player.lock().await;
-        playback::play_channel(
-            &mut player,
-            &state.current_channel,
-            &channel,
-            audio_lang.as_deref(),
-            subtitle_lang.as_deref(),
-        )
-        .await?;
+        let mut curr = state.current_channel.write().await;
+        *curr = Some(CurrentChannel::from_channel(&channel));
     }
 
     if let Some(channel_id) = channel.id {
@@ -56,8 +61,15 @@ pub async fn play_channel(state: State<'_, AppState>, channel: Channel) -> Resul
 
 #[tauri::command]
 pub async fn stop_playback(state: State<'_, AppState>) -> Result<(), AppError> {
-    let mut player = state.mpv_player.lock().await;
-    playback::stop(&mut player, &state.current_channel).await?;
+    playback::with_player(&state.mpv_player, |player| {
+        player.stop().map_err(|e| AppError::Mpv(e.to_string()))
+    })
+    .await?;
+
+    {
+        let mut curr = state.current_channel.write().await;
+        *curr = None;
+    }
 
     info!("Playback stopped");
 
@@ -66,6 +78,5 @@ pub async fn stop_playback(state: State<'_, AppState>) -> Result<(), AppError> {
 
 #[tauri::command]
 pub async fn is_playing(state: State<'_, AppState>) -> Result<bool, AppError> {
-    let mut player = state.mpv_player.lock().await;
-    Ok(playback::is_playing(&mut player))
+    playback::with_player(&state.mpv_player, |player| Ok(player.is_playing())).await
 }

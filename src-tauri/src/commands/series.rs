@@ -83,15 +83,19 @@ pub async fn play_episode_with_season(
     };
 
     {
-        let mut player = state.mpv_player.lock().await;
-        player
-            .play_with_playlist(
-                &urls,
-                Some(first_title),
-                audio_lang.as_deref(),
-                subtitle_lang.as_deref(),
-            )
-            .map_err(|e| AppError::Mpv(e.to_string()))?;
+        let urls = urls.clone();
+        let title = first_title.clone();
+        crate::playback::with_player(&state.mpv_player, move |player| {
+            player
+                .play_with_playlist(
+                    &urls,
+                    Some(&title),
+                    audio_lang.as_deref(),
+                    subtitle_lang.as_deref(),
+                )
+                .map_err(|e| AppError::Mpv(e.to_string()))
+        })
+        .await?;
     }
 
     {

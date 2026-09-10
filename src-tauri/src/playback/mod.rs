@@ -1,51 +1,30 @@
 pub mod mpv;
 
-use crate::db::models::Channel;
-use crate::state::CurrentChannel;
+use std::sync::Arc;
+use tokio::sync::Mutex;
+
 use crate::error::AppError;
-use tokio::sync::RwLock;
 
-/// Play a channel with language preferences
-pub async fn play_channel(
-    mpv: &mut mpv::MpvPlayer,
-    current: &RwLock<Option<CurrentChannel>>,
-    channel: &Channel,
-    audio_lang: Option<&str>,
-    subtitle_lang: Option<&str>,
-) -> Result<(), AppError> {
-    // Play the stream with title and language preferences
-    mpv.play_with_title(
-        &channel.url,
-        Some(&channel.name),
-        audio_lang,
-        subtitle_lang,
-    )
-    .map_err(|e| AppError::Mpv(e.to_string()))?;
-
-    // Update current channel
-    let mut curr = current.write().await;
-    *curr = Some(CurrentChannel::from_channel(channel));
-
-    Ok(())
-}
-
-/// Stop playback and clear current channel
-pub async fn stop(
-    mpv: &mut mpv::MpvPlayer,
-    current: &RwLock<Option<CurrentChannel>>,
-) -> Result<(), AppError> {
-    mpv.stop().map_err(|e| AppError::Mpv(e.to_string()))?;
-
-    // Clear current channel
-    let mut curr = current.write().await;
-    *curr = None;
-
-    Ok(())
-}
-
-/// Check if MPV is currently playing
-pub fn is_playing(mpv: &mut mpv::MpvPlayer) -> bool {
-    mpv.is_playing()
+/// Run a blocking MPV operation off the async runtime worker threads.
+///
+/// `MpvPlayer`'s spawn/stop calls are synchronous and can block for seconds —
+/// `stop()` waits up to ~6s for the previous mpv process to exit. Running that
+/// directly inside an async command holds a runtime worker hostage and, worse,
+/// keeps the player lock held the whole time, so the 3s `is_playing` poll
+/// (which takes the same lock) stacks up behind it. `spawn_blocking` +
+/// `blocking_lock` moves the work to a dedicated blocking thread.
+pub async fn with_player<F, T>(mpv: &Arc<Mutex<mpv::MpvPlayer>>, f: F) -> Result<T, AppError>
+where
+    F: FnOnce(&mut mpv::MpvPlayer) -> Result<T, AppError> + Send + 'static,
+    T: Send + 'static,
+{
+    let mpv = mpv.clone();
+    tokio::task::spawn_blocking(move || {
+        let mut player = mpv.blocking_lock();
+        f(&mut player)
+    })
+    .await
+    .map_err(|e| AppError::Mpv(format!("mpv task panicked: {e}")))?
 }
 
 /// Check if MPV is installed on the system

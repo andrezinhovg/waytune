@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import globals from 'globals';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import react from 'eslint-plugin-react';
@@ -27,26 +28,9 @@ export default [
         },
       },
       globals: {
-        // Browser globals
-        window: 'readonly',
-        document: 'readonly',
-        navigator: 'readonly',
-        console: 'readonly',
-        setTimeout: 'readonly',
-        clearTimeout: 'readonly',
-        setInterval: 'readonly',
-        clearInterval: 'readonly',
-        Map: 'readonly',
-        Promise: 'readonly',
-        HTMLElement: 'readonly',
-        HTMLDivElement: 'readonly',
-        alert: 'readonly',
+        ...globals.browser,
+        ...globals.node,
         React: 'readonly',
-        AbortController: 'readonly',
-        AbortSignal: 'readonly',
-        // Node/Test globals
-        global: 'readonly',
-        process: 'readonly',
       },
     },
     plugins: {

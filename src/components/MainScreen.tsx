@@ -88,7 +88,18 @@ export default function MainScreen() {
   // (Movies/Series tabs) only changes how ChannelCard renders the artwork
   // aspect ratio — see posterMode there.
   const isPosterTab = contentTypeFilter === 'vod' || contentTypeFilter === 'series';
-  const { columns } = useResponsiveGrid(parentRef);
+  const { columns, gridRef } = useResponsiveGrid();
+
+  // Compose the scroll container ref: keep parentRef.current populated for the
+  // virtualizer's getScrollElement while also handing the node to
+  // useResponsiveGrid so its ResizeObserver re-attaches on node swaps.
+  const setChannelListRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      parentRef.current = node;
+      gridRef(node);
+    },
+    [gridRef]
+  );
 
   // Load parental settings on mount
   useEffect(() => {
@@ -403,7 +414,7 @@ export default function MainScreen() {
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <CategorySidebar />
         <div
-          ref={parentRef}
+          ref={setChannelListRef}
           onKeyDown={handleKeyDown}
           className="min-h-0 flex-1 overflow-y-auto"
           id="channel-list"

@@ -55,7 +55,6 @@ export function useGridKeyboardNav(
     const row = Math.floor(focusedIndex / columns);
     onFocusedRowChange?.(row);
 
-    // eslint-disable-next-line no-undef
     const raf = requestAnimationFrame(() => {
       const gridHasFocus = cardRefs.current.some(
         (el) => el?.contains(document.activeElement)
@@ -64,7 +63,6 @@ export function useGridKeyboardNav(
         cardRefs.current[focusedIndex]?.focus();
       }
     });
-    // eslint-disable-next-line no-undef
     return () => cancelAnimationFrame(raf);
   }, [focusedIndex, columns, onFocusedRowChange]);
 

@@ -59,9 +59,14 @@ export function useEpgData(channels: Channel[]): UseEpgDataResult {
         (c) => c.epg_id && c.id && c.content_type === 'live'
       );
 
-      // Skip channels that already have cached data (unless force refresh)
+      // Skip channels that already have cached data (unless force refresh).
+      // Read the cache via getState() rather than the subscribed `channelEpgData`
+      // value: this fetch calls setChannelEpg in a loop, and if the callback
+      // depended on `channelEpgData` every write would give it a new identity,
+      // re-run the debounced effect below, and abort this fetch mid-batch.
       if (!forceRefresh) {
-        channelsWithEpg = channelsWithEpg.filter((c) => c.id && !channelEpgData.has(c.id));
+        const cached = usePlayerStore.getState().channelEpgData;
+        channelsWithEpg = channelsWithEpg.filter((c) => c.id && !cached.has(c.id));
       }
 
       // Limit to MAX_CHANNELS to avoid overwhelming the backend
@@ -99,7 +104,7 @@ export function useEpgData(channels: Channel[]): UseEpgDataResult {
         abortControllerRef.current = null;
       }
     },
-    [channelEpgData, setChannelEpg]
+    [setChannelEpg]
   );
 
   // Debounced fetch when channels change

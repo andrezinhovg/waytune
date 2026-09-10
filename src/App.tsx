@@ -9,14 +9,15 @@ import { useTheme } from './hooks/useTheme';
 
 export default function App() {
   useTheme();
-  const {
-    isSetupComplete,
-    setIsSetupComplete,
-    setPlaylists,
-    setChannels,
-    setCurrentPlaylist,
-    setActiveProfileId,
-  } = usePlayerStore();
+  // Per-field selectors, not a bare usePlayerStore(): the bare form subscribes
+  // App (and the whole MainScreen tree under it) to every store mutation,
+  // re-rendering on each of the ~100 setChannelEpg writes per EPG refresh.
+  const isSetupComplete = usePlayerStore((s) => s.isSetupComplete);
+  const setIsSetupComplete = usePlayerStore((s) => s.setIsSetupComplete);
+  const setPlaylists = usePlayerStore((s) => s.setPlaylists);
+  const setChannels = usePlayerStore((s) => s.setChannels);
+  const setCurrentPlaylist = usePlayerStore((s) => s.setCurrentPlaylist);
+  const setActiveProfileId = usePlayerStore((s) => s.setActiveProfileId);
   const [isCheckingSetup, setIsCheckingSetup] = useState(true);
 
   useEffect(() => {

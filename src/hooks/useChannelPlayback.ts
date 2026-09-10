@@ -72,7 +72,13 @@ export function useChannelPlayback(): UseChannelPlaybackResult {
   useEffect(() => {
     if (!isPlaying) return;
 
+    let checking = false;
     const interval = setInterval(async () => {
+      // Skip this tick if the previous check is still in flight — the IPC call
+      // can take a moment when the backend is busy stopping mpv, and setInterval
+      // would otherwise stack calls that all block on the same player lock.
+      if (checking) return;
+      checking = true;
       try {
         const playing = await checkIsPlaying();
         if (!playing) {
@@ -84,6 +90,8 @@ export function useChannelPlayback(): UseChannelPlaybackResult {
         }
       } catch (err) {
         logger.error('Failed to check playback status:', err);
+      } finally {
+        checking = false;
       }
     }, 3000);
 

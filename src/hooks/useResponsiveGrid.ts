@@ -1,8 +1,13 @@
-import { useState, useEffect, type RefObject } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export interface GridConfig {
   columns: number;
   gap: number;
+  /** Callback ref to attach to the grid's scroll container. Drives the
+   * ResizeObserver directly, so it re-attaches deterministically when the
+   * node is swapped (e.g. MainScreen -> SeriesView -> back) instead of
+   * relying on an incidental re-render to notice. */
+  gridRef: (node: HTMLElement | null) => void;
 }
 
 const MIN_CARD_WIDTH = 220; // px, minimum comfortable card width
@@ -19,16 +24,16 @@ export function computeColumns(containerWidth: number): number {
   return Math.min(MAX_COLUMNS, Math.max(MIN_COLUMNS, raw));
 }
 
-/** Column count derived from the real measured width of `containerRef`,
+/** Column count derived from the real measured width of the grid container,
  * via ResizeObserver — reacts correctly to sidebar/Continue-Watching
  * changes and anything else that changes the container's actual size,
  * instead of guessing from window dimensions and hardcoded offsets. */
-export function useResponsiveGrid(containerRef: RefObject<HTMLElement | null>): GridConfig {
+export function useResponsiveGrid(): GridConfig {
   const [columns, setColumns] = useState(MIN_COLUMNS);
+  const [node, setNode] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+    if (!node) return;
 
     const observer = new ResizeObserver((entries) => {
       const width = entries[0]?.contentRect.width ?? 0;
@@ -37,15 +42,11 @@ export function useResponsiveGrid(containerRef: RefObject<HTMLElement | null>): 
         return next === prev ? prev : next;
       });
     });
-    observer.observe(el);
+    observer.observe(node);
     return () => observer.disconnect();
-    // containerRef.current is intentionally a dep: MainScreen unmounts/remounts
-    // this container when swapping to SeriesView and back (Browse -> Go Back),
-    // which swaps in a brand new DOM node under the same stable ref object. Without
-    // watching .current, the observer stays attached to the old detached node and
-    // columns freezes at MIN_COLUMNS forever once the container is later hidden.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [containerRef, containerRef.current]);
+  }, [node]);
 
-  return { columns, gap: GAP };
+  const gridRef = useCallback((next: HTMLElement | null) => setNode(next), []);
+
+  return { columns, gap: GAP, gridRef };
 }

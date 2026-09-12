@@ -1,8 +1,8 @@
-# Contributing to Better IPTV
+# Contributing to Waytune
 
 ## Report Bugs
 
-[Create an issue](https://github.com/mewset/better-iptv/issues/new) with:
+[Create an issue](https://github.com/andrezinhovg/waytune/issues/new) with:
 - Detailed description
 - Steps to reproduce
 - OS and app version
@@ -11,7 +11,7 @@
 
 ## Suggest Features
 
-[Open a feature request](https://github.com/mewset/better-iptv/issues/new) describing:
+[Open a feature request](https://github.com/andrezinhovg/waytune/issues/new) describing:
 - What you want
 - Why it's useful
 - How it should work
@@ -20,8 +20,8 @@
 
 ```bash
 # Fork & clone
-git clone https://github.com/YOUR-USERNAME/better-iptv.git
-cd better-iptv
+git clone https://github.com/YOUR-USERNAME/waytune.git
+cd waytune
 
 # Install dependencies
 npm install

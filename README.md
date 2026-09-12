@@ -1,28 +1,26 @@
 <div align="center">
-  <img src="src/assets/logo/logo-256.png" alt="Better IPTV Logo" width="200"/>
+  <img src="src/assets/logo/logo-256.png" alt="Waytune Logo" width="200"/>
 
-  # Better IPTV
+  # Waytune
 
   **Modern, cross-platform IPTV player built with Rust and Tauri**
 
-  [![Test Build](https://github.com/mewset/better-iptv/workflows/Test%20Build/badge.svg)](https://github.com/mewset/better-iptv/actions)
+  [![Test Build](https://github.com/andrezinhovg/waytune/workflows/Test%20Build/badge.svg)](https://github.com/andrezinhovg/waytune/actions)
   [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-blue.svg)](#-installation)
-  [![AUR](https://img.shields.io/aur/version/better-iptv?logo=archlinux&label=AUR)](https://aur.archlinux.org/packages/better-iptv)
   [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](LICENSE)
-  [![Website](https://img.shields.io/badge/website-better--iptv.vercel.app-informational)](https://better-iptv.vercel.app)
 
-  [Website](https://better-iptv.vercel.app) • [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [FAQ](#-faq) • [Contributing](#-contributing)
+  [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [FAQ](#-faq) • [Contributing](#-contributing)
 </div>
 
-> **Note:** Better IPTV is not affiliated with any IPTV provider. Users are responsible for compliance with local laws and provider terms.
+> **Note:** Waytune is not affiliated with any IPTV provider. Users are responsible for compliance with local laws and provider terms.
 
 ---
 
 ## 📺 Overview
 
-Better IPTV is a desktop IPTV player that combines the performance of Rust with a modern web UI. Built on MPV for video playback, it handles live TV, movies, and series across Linux, Windows, and macOS.
+Waytune is a desktop IPTV player that combines the performance of Rust with a modern web UI. Built on MPV for video playback, it handles live TV, movies, and series across Linux, Windows, and macOS.
 
-**Why Better IPTV?**
+**Why Waytune?**
 - **Fast & Efficient** - Rust backend handles 100,000+ channels smoothly
 - **Smart Features** - EPG, parental controls, multi-profile support, and more
 - **Modern UI** - Clean, responsive interface with dark/light themes
@@ -64,7 +62,7 @@ Better IPTV is a desktop IPTV player that combines the performance of Rust with 
 
 ### MPV Media Player
 
-Better IPTV uses MPV for video playback. Installation varies by platform:
+Waytune uses MPV for video playback. Installation varies by platform:
 
 **Linux:**
 ```bash
@@ -88,20 +86,20 @@ brew install mpv
 
 If you prefer a manual installation: download from [mpv.io](https://mpv.io/installation/) or use `choco install mpv`.
 
-### Download Better IPTV
+### Download Waytune
 
-1. Visit [Releases](https://github.com/mewset/better-iptv/releases/latest)
+1. Visit [Releases](https://github.com/andrezinhovg/waytune/releases/latest)
 2. Download for your platform:
    - **Linux (Ubuntu/Debian)**: `.AppImage`, `.deb`
-   - **Linux (Arch/Manjaro)**: `-arch.AppImage` or install via AUR (see below)
+   - **Linux (Arch/Manjaro)**: `-arch.AppImage`
    - **Linux (Fedora/RHEL)**: `.rpm`
    - **Windows**: `.msi` installer or `.exe` portable
    - **macOS**: `.dmg` disk image
 
 **Linux AppImage (Ubuntu/Debian):**
 ```bash
-chmod +x Better-IPTV_*_amd64.AppImage
-./Better-IPTV_*_amd64.AppImage
+chmod +x Waytune_*_amd64.AppImage
+./Waytune_*_amd64.AppImage
 ```
 
 **Linux AppImage (Arch/Manjaro):**
@@ -109,15 +107,8 @@ chmod +x Better-IPTV_*_amd64.AppImage
 > **Important:** Use the `-arch.AppImage` variant on Arch-based distros. The standard AppImage bundles WebKit libraries from Ubuntu that conflict with newer system libraries on rolling-release distros and will cause a crash on startup.
 
 ```bash
-chmod +x Better-IPTV_*_amd64-arch.AppImage
-./Better-IPTV_*_amd64-arch.AppImage
-```
-
-Alternatively, install via the AUR:
-```bash
-yay -S better-iptv
-# or
-paru -S better-iptv
+chmod +x Waytune_*_amd64-arch.AppImage
+./Waytune_*_amd64-arch.AppImage
 ```
 
 ---
@@ -191,7 +182,7 @@ See [Installation](#-installation) for platform-specific instructions.
 <details>
 <summary><strong>Can I watch channels directly in the app?</strong></summary>
 
-No, Better IPTV uses MPV as an external player. This provides broad codec support and hardware acceleration, but video displays in a separate window.
+No, Waytune uses MPV as an external player. This provides broad codec support and hardware acceleration, but video displays in a separate window.
 </details>
 
 <details>
@@ -207,7 +198,7 @@ Check:
 <details>
 <summary><strong>How many channels can it handle?</strong></summary>
 
-Better IPTV has been tested with 150,000+ channels during development without issues.
+Waytune has been tested with 150,000+ channels during development without issues.
 </details>
 
 <details>
@@ -225,7 +216,7 @@ Yes. All credentials are stored locally on your device. Nothing is sent to exter
 <details>
 <summary><strong>Can I play local video files?</strong></summary>
 
-No, Better IPTV is designed for IPTV streams. Use MPV directly for local media.
+No, Waytune is designed for IPTV streams. Use MPV directly for local media.
 </details>
 
 ---
@@ -254,9 +245,9 @@ No, Better IPTV is designed for IPTV streams. Use MPV directly for local media.
 
 ### Logs
 
-**Linux**: `~/.local/share/better-ip-tv/logs/better-ip-tv.log`
-**Windows**: `%APPDATA%\com.m0s.better-ip-tv\logs\better-ip-tv.log`
-**macOS**: `~/Library/Application Support/com.m0s.better-ip-tv/logs/better-ip-tv.log`
+**Linux**: `~/.local/share/waytune/logs/waytune.log`
+**Windows**: `%APPDATA%\io.github.andrezinhovg.waytune\logs\waytune.log`
+**macOS**: `~/Library/Application Support/io.github.andrezinhovg.waytune/logs/waytune.log`
 
 Credentials are automatically masked in logs.
 
@@ -266,9 +257,9 @@ Credentials are automatically masked in logs.
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, code standards, and PR guidelines.
 
-- [Report a bug](https://github.com/mewset/better-iptv/issues/new)
-- [Request a feature](https://github.com/mewset/better-iptv/issues/new)
-- [Join discussions](https://github.com/mewset/better-iptv/discussions)
+- [Report a bug](https://github.com/andrezinhovg/waytune/issues/new)
+- [Request a feature](https://github.com/andrezinhovg/waytune/issues/new)
+- [Join discussions](https://github.com/andrezinhovg/waytune/discussions)
 
 ---
 
@@ -286,27 +277,11 @@ See [CHANGELOG_USER.md](CHANGELOG_USER.md) for version history and release notes
 
 ## 🙏 Acknowledgments
 
+- **[better-iptv](https://github.com/mewset/better-iptv)** by mewset - Waytune started as a fork of this project, under GPL v2
 - **[MPV Project](https://mpv.io/)** - Media player with comprehensive codec support
 - **[Tauri](https://tauri.app/)** - Cross-platform framework enabling this project
 - **[Open TV](https://github.com/Fredolx/open-tv)** - Architectural inspiration
 - **IPTV Community** - Standards, protocols, and ongoing support
-
----
-
-## 💖 Support the Project
-
-If you find Better IPTV useful, consider supporting its development:
-
-- **Ko-fi**: [ko-fi.com/R6R21I53PD](https://ko-fi.com/R6R21I53PD)
-- **GitHub Sponsors**: [Sponsor on GitHub](https://github.com/sponsors/mewset)
-
-**Crypto donations:**
-
-| Currency | Address |
-|----------|---------|
-| ETH | `0x47183F4e4FEAeE4BF52d95E68893e950125b1B44` |
-| BTC | `bc1qth40h9t8r7hvp4czqvf20f3w72jdg4epd5mjq8` |
-| SOL | `3waxf6r2tmaaADuBGYoVD5qz4z8VnFNEGGafbXZ6Jf2j` |
 
 ---
 

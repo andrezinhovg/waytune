@@ -1,6 +1,6 @@
 # Test Scripts
 
-CI/CD testing utilities for Better IPTV.
+CI/CD testing utilities for Waytune.
 
 ---
 

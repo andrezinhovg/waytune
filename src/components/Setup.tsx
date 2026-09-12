@@ -156,11 +156,11 @@ export default function Setup({ onComplete, onCancel }: SetupProps = {}) {
         <div className="mb-8 text-center">
           {/* Logo */}
           <div className="mb-4 flex justify-center">
-            <img src={logoImage} alt="Better-IPTV Logo" className="h-24 w-24" />
+            <img src={logoImage} alt="Waytune Logo" className="h-24 w-24" />
           </div>
 
           <h1 className="mb-2 text-fluid-3xl font-bold text-text">
-            {onCancel ? 'Add New Profile' : 'Better IPTV'}
+            {onCancel ? 'Add New Profile' : 'Waytune'}
           </h1>
           <p className="text-fluid-base text-text-muted">
             {onCancel ? 'Add a new IPTV playlist' : 'Add your IPTV playlist to get started'}

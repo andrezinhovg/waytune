@@ -23,7 +23,7 @@ export const LANGUAGE_OPTIONS = [
 ] as const;
 
 export const USER_AGENT_OPTIONS = [
-  { mode: 'default', label: 'Default (Better-IP-TV)' },
+  { mode: 'default', label: 'Default (Waytune)' },
   { mode: 'tivimate', label: 'TiviMate' },
   { mode: 'vlc', label: 'VLC' },
   { mode: 'custom', label: 'Custom' },

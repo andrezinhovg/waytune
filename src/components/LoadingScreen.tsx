@@ -13,7 +13,7 @@ interface LoadingScreenProps {
 }
 
 /**
- * Loading screen with Better-IPTV logo
+ * Loading screen with Waytune logo
  * Shown during initial setup and channel loading
  */
 export const LoadingScreen = memo(function LoadingScreen({
@@ -31,7 +31,7 @@ export const LoadingScreen = memo(function LoadingScreen({
     <div className="flex min-h-screen flex-col items-center justify-center bg-bg">
       {/* Logo with pulse animation */}
       <div className="mb-8 animate-pulse">
-        <img src={logoImage} alt="Better-IPTV Logo" className="h-64 w-64 drop-shadow-2xl" />
+        <img src={logoImage} alt="Waytune Logo" className="h-64 w-64 drop-shadow-2xl" />
       </div>
 
       {/* Loading message */}

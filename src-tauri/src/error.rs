@@ -1,4 +1,4 @@
-//! Application error types for Better-IP-TV
+//! Application error types for Waytune
 //!
 //! This module provides a unified error type that is serializable for Tauri IPC
 //! and implements proper error conversion traits.

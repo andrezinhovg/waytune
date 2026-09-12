@@ -23,7 +23,7 @@ body:
       label: Steps to Reproduce
       description: How can we reproduce this bug?
       placeholder: |
-        1. Open Better IPTV
+        1. Open Waytune
         2. Click on '...'
         3. See error
     validations:
@@ -67,7 +67,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Better IPTV Version
+      label: Waytune Version
       description: Which version are you using? (Check in Settings or GitHub release)
       placeholder: e.g., 2.2.0
     validations:
@@ -103,9 +103,9 @@ body:
       label: Log File
       description: |
         Please attach or paste relevant log entries:
-        - **Linux**: `~/.local/share/better-ip-tv/logs/better-ip-tv.log`
-        - **Windows**: `%APPDATA%\com.m0s.better-ip-tv\logs\better-ip-tv.log`
-        - **macOS**: `~/Library/Application Support/com.m0s.better-ip-tv/logs/better-ip-tv.log`
+        - **Linux**: `~/.local/share/waytune/logs/waytune.log`
+        - **Windows**: `%APPDATA%\io.github.andrezinhovg.waytune\logs\waytune.log`
+        - **macOS**: `~/Library/Application Support/io.github.andrezinhovg.waytune/logs/waytune.log`
       placeholder: Paste log content here...
       render: shell
     validations:

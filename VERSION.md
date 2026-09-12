@@ -32,7 +32,7 @@ This interactive script will:
 ```bash
 $ npm run release
 
-🚀 Better IPTV Release Creator
+🚀 Waytune Release Creator
 ================================
 
 📦 Current version: 0.1.0

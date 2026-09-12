@@ -382,7 +382,7 @@ export default function MainScreen() {
       {/* Header */}
       <div className="border-b border-border bg-surface p-6">
         <div className="mx-auto flex items-center justify-between px-2">
-          <h1 className="text-fluid-2xl font-bold text-text">Better IPTV</h1>
+          <h1 className="text-fluid-2xl font-bold text-text">Waytune</h1>
           <div className="flex items-center gap-6">
             <span className="text-fluid-sm text-text-muted">
               {channels.length} channels

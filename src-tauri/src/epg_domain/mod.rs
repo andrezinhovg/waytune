@@ -18,7 +18,7 @@ use crate::error::AppError;
 ///
 /// # Examples
 /// ```ignore
-/// use better_ip_tv::epg_domain::validate_epg_url;
+/// use waytune_lib::epg_domain::validate_epg_url;
 ///
 /// assert!(validate_epg_url("https://example.com/epg.xml").is_ok());
 /// assert!(validate_epg_url("").is_err());

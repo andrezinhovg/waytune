@@ -64,7 +64,7 @@ pub fn run() {
                     Target::new(TargetKind::Stdout),
                     Target::new(TargetKind::Webview),
                     Target::new(TargetKind::LogDir {
-                        file_name: Some("better-ip-tv".to_string()),
+                        file_name: Some("waytune".to_string()),
                     }),
                 ])
                 .max_file_size(10_000_000) // 10 MB
@@ -84,7 +84,7 @@ pub fn run() {
                 .expect("Failed to create app data directory");
 
             // Database path
-            let db_path = app_data_dir.join("better-ip-tv.db");
+            let db_path = app_data_dir.join("waytune.db");
 
             // Build connection pool
             let manager = SqliteConnectionManager::file(&db_path);

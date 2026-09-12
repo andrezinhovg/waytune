@@ -23,7 +23,7 @@ const VALID_CONTENT_TYPES: &[&str] = &["live", "vod", "series"];
 ///
 /// # Examples
 /// ```ignore
-/// use better_ip_tv::channel_domain::validate_content_type;
+/// use waytune_lib::channel_domain::validate_content_type;
 ///
 /// assert!(validate_content_type("live").is_ok());
 /// assert!(validate_content_type("invalid").is_err());
@@ -87,8 +87,8 @@ pub fn validate_playlist_id(playlist_id: i64) -> Result<(), AppError> {
 ///
 /// # Examples
 /// ```ignore
-/// use better_ip_tv::channel_domain::filter_by_content_type;
-/// use better_ip_tv::db::models::Channel;
+/// use waytune_lib::channel_domain::filter_by_content_type;
+/// use waytune_lib::db::models::Channel;
 ///
 /// let channels = vec![
 ///     Channel { content_type: "live".to_string(), ..Default::default() },

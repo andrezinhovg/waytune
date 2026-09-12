@@ -1,5 +1,7 @@
 # What's New in Better IPTV
 
+> History before 2026-09-12 is inherited from the [better-iptv](https://github.com/mewset/better-iptv) fork (by mewset), prior to Waytune's divergence. Entries below this point describe that project under its original name and are kept unedited as an accurate historical record.
+
 A simple overview of new features and improvements.
 
 ---

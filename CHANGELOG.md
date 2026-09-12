@@ -1,5 +1,7 @@
 # Changelog
 
+> History before 2026-09-12 is inherited from the [better-iptv](https://github.com/mewset/better-iptv) fork (by mewset), prior to Waytune's divergence. Entries below this point describe that project under its original name and are kept unedited as an accurate historical record.
+
 All notable changes to Better IPTV will be documented in this file.
 This file is a developer-changelog, aimed towards development changes.
 

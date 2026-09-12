@@ -2,7 +2,7 @@
 name = "waytune"
 version = "2.6.1"
 description = "Cross-platform IPTV player with MPV backend"
-authors = ["Better-IP-TV Team"]
+authors = ["andrezinhovg"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

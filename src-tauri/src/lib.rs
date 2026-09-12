@@ -95,7 +95,7 @@ pub fn run() {
                 .expect("Failed to create connection pool");
 
             // Startup logging
-            info!("Better-IP-TV v{} starting", env!("CARGO_PKG_VERSION"));
+            info!("Waytune v{} starting", env!("CARGO_PKG_VERSION"));
             info!("Database: {}", db_path.display());
             info!("Connection pool: {} connections", pool.max_size());
 

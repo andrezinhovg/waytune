@@ -5,7 +5,7 @@
 set -e
 
 DESKTOP_DIR="/usr/share/applications"
-TARGET="$DESKTOP_DIR/com.m0s.better-ip-tv.desktop"
+TARGET="$DESKTOP_DIR/io.github.andrezinhovg.waytune.desktop"
 
 rm -f "$TARGET"
 

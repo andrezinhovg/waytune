@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Better IPTV",
+  "productName": "Waytune",
   "version": "2.6.1",
-  "identifier": "com.m0s.better-ip-tv",
+  "identifier": "io.github.andrezinhovg.waytune",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Better IPTV",
+        "title": "Waytune",
         "width": 1280,
         "height": 800,
         "minWidth": 800,
@@ -38,7 +38,7 @@
     ],
     "linux": {
       "deb": {
-        "desktopTemplate": "templates/better-iptv.desktop",
+        "desktopTemplate": "templates/waytune.desktop",
         "postInstallScript": "scripts/postinst.sh",
         "postRemoveScript": "scripts/postrm.sh"
       },
@@ -46,7 +46,7 @@
         "bundleMediaFramework": false
       },
       "rpm": {
-        "desktopTemplate": "templates/better-iptv.desktop",
+        "desktopTemplate": "templates/waytune.desktop",
         "postInstallScript": "scripts/postinst.sh",
         "postRemoveScript": "scripts/postrm.sh"
       }

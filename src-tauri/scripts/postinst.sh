@@ -1,7 +1,7 @@
 #!/bin/sh
 # Runs after .deb/.rpm install. Tauri's Linux bundler names the .desktop
-# file after productName ("Better IPTV.desktop"), but the app's Wayland/GTK
-# app_id is the identifier (com.m0s.better-ip-tv, from tauri.conf.json).
+# file after productName ("Waytune.desktop"), but the app's Wayland/GTK
+# app_id is the identifier (io.github.andrezinhovg.waytune, from tauri.conf.json).
 # KDE Plasma's taskbar matches a running window's app_id against a
 # <app_id>.desktop filename (unlike its app menu, which just reads Icon=
 # from any .desktop) — without this, KDE users see a generic taskbar icon
@@ -9,8 +9,8 @@
 set -e
 
 DESKTOP_DIR="/usr/share/applications"
-ORIGINAL="Better IPTV.desktop"
-TARGET="$DESKTOP_DIR/com.m0s.better-ip-tv.desktop"
+ORIGINAL="Waytune.desktop"
+TARGET="$DESKTOP_DIR/io.github.andrezinhovg.waytune.desktop"
 
 if [ -f "$DESKTOP_DIR/$ORIGINAL" ] && [ ! -e "$TARGET" ]; then
     ln -sf "$ORIGINAL" "$TARGET"

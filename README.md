@@ -10,6 +10,8 @@
   [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](LICENSE)
 
   [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [FAQ](#-faq) • [Contributing](#-contributing)
+
+  Read this in: **English** | [Português (Brasil)](README.pt-BR.md)
 </div>
 
 > **Note:** Waytune is not affiliated with any IPTV provider. Users are responsible for compliance with local laws and provider terms.

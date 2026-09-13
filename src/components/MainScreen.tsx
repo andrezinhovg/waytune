@@ -191,7 +191,11 @@ export default function MainScreen() {
   // kind of history ("favorites" has no content_type of its own, so it's scoped
   // via the channel's is_favorite flag instead).
   const visibleContinueWatching = useMemo(() => {
-    const parentalFiltered = !(parentalEnabled && !parentalUnlocked && parentalVisibility === 'hide')
+    const parentalFiltered = !(
+      parentalEnabled &&
+      !parentalUnlocked &&
+      parentalVisibility === 'hide'
+    )
       ? continueWatching
       : continueWatching.filter((entry) => {
           const channel = channelsById.get(entry.channel_id);
@@ -384,9 +388,7 @@ export default function MainScreen() {
         <div className="mx-auto flex items-center justify-between px-2">
           <h1 className="text-fluid-2xl font-bold text-text">Waytune</h1>
           <div className="flex items-center gap-6">
-            <span className="text-fluid-sm text-text-muted">
-              {channels.length} channels
-            </span>
+            <span className="text-fluid-sm text-text-muted">{channels.length} channels</span>
             <button
               onClick={() => setShowSettings(true)}
               className="rounded-lg p-3 transition-colors hover:bg-surface-hover"

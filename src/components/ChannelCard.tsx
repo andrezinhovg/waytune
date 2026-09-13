@@ -54,7 +54,7 @@ export const ChannelCard = memo(function ChannelCard({
       ref={cardRef}
       tabIndex={isFocused ? 0 : -1}
       onFocus={onFocus}
-      className={`relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:shadow-lg hover:opacity-100 ${
+      className={`relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-all hover:opacity-100 hover:shadow-lg ${
         isFocused ? 'opacity-100 ring-2 ring-accent ring-offset-2 ring-offset-bg' : 'opacity-75'
       }`}
     >
@@ -100,9 +100,7 @@ export const ChannelCard = memo(function ChannelCard({
           }`}
         >
           <Star
-            className={`h-4 w-4 ${
-              channel.is_favorite ? 'fill-white text-white' : 'text-white'
-            }`}
+            className={`h-4 w-4 ${channel.is_favorite ? 'fill-white text-white' : 'text-white'}`}
           />
         </button>
       </div>
@@ -111,15 +109,10 @@ export const ChannelCard = memo(function ChannelCard({
       <div className="flex min-h-0 flex-1 flex-col p-5">
         <h3 className="truncate text-fluid-lg font-medium text-text">{channel.name}</h3>
         {channel.group_name && (
-          <p className="mt-0.5 truncate text-fluid-sm text-text-muted">
-            {channel.group_name}
-          </p>
+          <p className="mt-0.5 truncate text-fluid-sm text-text-muted">{channel.group_name}</p>
         )}
         {currentProgram && channel.content_type === 'live' && (
-          <p
-            className="mt-0.5 truncate text-fluid-sm text-accent"
-            title={currentProgram}
-          >
+          <p className="mt-0.5 truncate text-fluid-sm text-accent" title={currentProgram}>
             📺 {currentProgram}
           </p>
         )}
@@ -129,7 +122,7 @@ export const ChannelCard = memo(function ChannelCard({
         <button
           tabIndex={-1}
           onClick={() => onPlay(channel)}
-          className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 font-medium text-fluid-sm transition-colors ${
+          className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3 text-fluid-sm font-medium transition-colors ${
             isPlaying
               ? 'bg-red-600 text-white hover:bg-red-700'
               : 'bg-accent text-white hover:bg-accent-hover'

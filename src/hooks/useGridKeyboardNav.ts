@@ -31,8 +31,7 @@ export function useGridKeyboardNav(
   const prevChannelsRef = useRef<Channel[]>(channels);
   const listChanged = useMemo(() => {
     const prev = prevChannelsRef.current;
-    const changed =
-      prev.length !== channels.length || channels.some((c, i) => c.id !== prev[i].id);
+    const changed = prev.length !== channels.length || channels.some((c, i) => c.id !== prev[i].id);
     prevChannelsRef.current = channels;
     return changed;
   }, [channels]);
@@ -56,9 +55,7 @@ export function useGridKeyboardNav(
     onFocusedRowChange?.(row);
 
     const raf = requestAnimationFrame(() => {
-      const gridHasFocus = cardRefs.current.some(
-        (el) => el?.contains(document.activeElement)
-      );
+      const gridHasFocus = cardRefs.current.some((el) => el?.contains(document.activeElement));
       if (gridHasFocus) {
         cardRefs.current[focusedIndex]?.focus();
       }

@@ -72,7 +72,11 @@ export const CategorySidebar = memo(function CategorySidebar() {
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto p-2" role="tablist" aria-label="Channel categories">
+      <div
+        className="min-h-0 flex-1 overflow-y-auto p-2"
+        role="tablist"
+        aria-label="Channel categories"
+      >
         <button
           onClick={() => setCategoryFilter(null)}
           role="tab"

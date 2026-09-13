@@ -35,7 +35,7 @@ export const SearchBar = memo(
               value={value}
               onChange={(e) => onChange(e.target.value)}
               placeholder={placeholder}
-              className="w-full rounded-lg border border-border py-2 pl-10 pr-4 bg-surface text-text focus:border-transparent focus:ring-2 focus:ring-accent dark:bg-surface dark:text-text"
+              className="w-full rounded-lg border border-border bg-surface py-2 pl-10 pr-4 text-text focus:border-transparent focus:ring-2 focus:ring-accent dark:bg-surface dark:text-text"
             />
           </div>
         </div>

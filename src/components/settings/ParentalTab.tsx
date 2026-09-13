@@ -42,16 +42,12 @@ export default function ParentalTab({
   return (
     <div className="space-y-6">
       <section>
-        <h3 className="mb-4 text-fluid-lg font-semibold text-text">
-          Parental Controls
-        </h3>
+        <h3 className="mb-4 text-fluid-lg font-semibold text-text">Parental Controls</h3>
         <div className="space-y-4">
           {/* Enable toggle */}
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-fluid-sm font-medium text-text-muted">
-                Enable Parental Controls
-              </p>
+              <p className="text-fluid-sm font-medium text-text-muted">Enable Parental Controls</p>
               <p className="text-fluid-xs text-text-muted">
                 Restrict access to channels with PIN protection
               </p>

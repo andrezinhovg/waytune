@@ -14,9 +14,7 @@ export default function PlaybackTab({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-fluid-sm font-medium text-text-muted">
-                Hardware Acceleration
-              </p>
+              <p className="text-fluid-sm font-medium text-text-muted">Hardware Acceleration</p>
               <p className="text-fluid-xs text-text-muted">
                 Use GPU for video decoding (recommended)
               </p>

@@ -195,10 +195,7 @@ export default function Setup({ onComplete, onCancel }: SetupProps = {}) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label
-              htmlFor="name"
-              className="mb-1 block text-fluid-sm font-medium text-text-muted"
-            >
+            <label htmlFor="name" className="mb-1 block text-fluid-sm font-medium text-text-muted">
               Playlist Name
             </label>
             <input
@@ -213,10 +210,7 @@ export default function Setup({ onComplete, onCancel }: SetupProps = {}) {
 
           {importType === 'm3u' ? (
             <div>
-              <label
-                htmlFor="url"
-                className="mb-1 block text-fluid-sm font-medium text-text-muted"
-              >
+              <label htmlFor="url" className="mb-1 block text-fluid-sm font-medium text-text-muted">
                 M3U Playlist URL
               </label>
               <input

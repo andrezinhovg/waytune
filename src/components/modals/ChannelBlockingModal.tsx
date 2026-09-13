@@ -201,11 +201,9 @@ export default function ChannelBlockingModal({
                         className="h-4 w-4 rounded border-border text-accent focus:ring-accent"
                       />
                       <div className="flex-1">
-                        <div className="font-medium text-fluid-base text-text">{channel.name}</div>
+                        <div className="text-fluid-base font-medium text-text">{channel.name}</div>
                         {channel.group_name && (
-                          <div className="text-fluid-sm text-text-muted">
-                            {channel.group_name}
-                          </div>
+                          <div className="text-fluid-sm text-text-muted">{channel.group_name}</div>
                         )}
                       </div>
                       {channel.id && blockedIds.has(channel.id) && (

@@ -34,9 +34,7 @@ describe('getRemainingEpisodes', () => {
   });
 
   it('maps to the PlaylistEpisode shape (id, title, extension)', () => {
-    const episodes = [
-      makeEpisode({ id: 'e1', title: 'Pilot', container_extension: 'mkv' }),
-    ];
+    const episodes = [makeEpisode({ id: 'e1', title: 'Pilot', container_extension: 'mkv' })];
 
     const result = getRemainingEpisodes(episodes, 'e1');
 
@@ -69,10 +67,7 @@ describe('getNextEpisode', () => {
 
   it('returns the following episode within the same season', () => {
     const episodesBySeasonKey = {
-      '1': [
-        makeEpisode({ id: 'e1', episode_num: 1 }),
-        makeEpisode({ id: 'e2', episode_num: 2 }),
-      ],
+      '1': [makeEpisode({ id: 'e1', episode_num: 1 }), makeEpisode({ id: 'e2', episode_num: 2 })],
     };
 
     const result = getNextEpisode(episodesBySeasonKey, seasons, 1, 'e1');

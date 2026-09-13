@@ -1,6 +1,11 @@
 import { create } from 'zustand';
 import type { Channel, Playlist, SeriesInfo, ContinueWatchingEntry } from '../types';
-import { getParentalSettings, getBlockedChannels, toggleFavorite, getContinueWatching } from '../lib/tauri';
+import {
+  getParentalSettings,
+  getBlockedChannels,
+  toggleFavorite,
+  getContinueWatching,
+} from '../lib/tauri';
 
 interface PlayerState {
   // Playlists

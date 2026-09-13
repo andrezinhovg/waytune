@@ -1,5 +1,12 @@
 import { invoke } from '@tauri-apps/api/core';
-import type { Channel, Playlist, SeriesInfo, MergeResult, WatchProgress, ContinueWatchingEntry } from '../types';
+import type {
+  Channel,
+  Playlist,
+  SeriesInfo,
+  MergeResult,
+  WatchProgress,
+  ContinueWatchingEntry,
+} from '../types';
 
 // ========== MPV Commands ==========
 

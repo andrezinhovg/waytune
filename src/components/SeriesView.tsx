@@ -189,13 +189,9 @@ export default function SeriesView({
               />
             )}
             <div className="flex-1">
-              <h1 className="mb-3 text-fluid-3xl font-bold text-text">
-                {currentSeries.info.name}
-              </h1>
+              <h1 className="mb-3 text-fluid-3xl font-bold text-text">{currentSeries.info.name}</h1>
               {currentSeries.info.genre && (
-                <p className="mb-3 text-fluid-sm text-text-muted">
-                  {currentSeries.info.genre}
-                </p>
+                <p className="mb-3 text-fluid-sm text-text-muted">{currentSeries.info.genre}</p>
               )}
               {currentSeries.info.plot && (
                 <p className="line-clamp-3 text-fluid-base text-text-muted">
@@ -334,13 +330,9 @@ function EpisodeCard({ episode, onPlay, isLastWatched }: EpisodeCardProps) {
         <h3 className="mb-1 line-clamp-2 text-fluid-base font-medium text-text">
           Episode {episode.episode_num}
         </h3>
-        <p className="mb-2 line-clamp-1 text-fluid-sm text-text-muted">
-          {episode.title}
-        </p>
+        <p className="mb-2 line-clamp-1 text-fluid-sm text-text-muted">{episode.title}</p>
         {episode.info.plot && (
-          <p className="mb-3 line-clamp-2 text-fluid-xs text-text-muted">
-            {episode.info.plot}
-          </p>
+          <p className="mb-3 line-clamp-2 text-fluid-xs text-text-muted">{episode.info.plot}</p>
         )}
         <button
           onClick={onPlay}

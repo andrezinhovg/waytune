@@ -115,9 +115,7 @@ export default function GeneralTab({
 
       {/* Playlist Request Settings */}
       <section>
-        <h3 className="mb-4 text-fluid-lg font-semibold text-text">
-          Playlist Requests
-        </h3>
+        <h3 className="mb-4 text-fluid-lg font-semibold text-text">Playlist Requests</h3>
         <div className="space-y-4">
           <div>
             <label className="mb-2 block text-fluid-sm font-medium text-text-muted">
@@ -238,9 +236,7 @@ export default function GeneralTab({
         <h3 className="mb-4 text-fluid-lg font-semibold text-text">Appearance</h3>
         <div className="space-y-4">
           <div>
-            <label className="mb-2 block text-fluid-sm font-medium text-text-muted">
-              Theme
-            </label>
+            <label className="mb-2 block text-fluid-sm font-medium text-text-muted">Theme</label>
             <div className="grid grid-cols-3 gap-3">
               {(['light', 'dark', 'system'] as const).map((t) => (
                 <button
@@ -262,9 +258,7 @@ export default function GeneralTab({
 
       {/* Language Settings */}
       <section>
-        <h3 className="mb-4 text-fluid-lg font-semibold text-text">
-          Language Settings
-        </h3>
+        <h3 className="mb-4 text-fluid-lg font-semibold text-text">Language Settings</h3>
         <div className="space-y-4">
           <div>
             <label className="mb-2 block text-fluid-sm font-medium text-text-muted">

@@ -5415,7 +5415,7 @@ dependencies = [
 
 [[package]]
 name = "waytune"
-version = "2.6.1"
+version = "1.0.0"
 dependencies = [
  "anyhow",
  "argon2",

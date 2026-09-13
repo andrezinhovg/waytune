@@ -1,6 +1,6 @@
 [package]
 name = "waytune"
-version = "2.6.1"
+version = "1.0.0"
 description = "Cross-platform IPTV player with MPV backend"
 authors = ["andrezinhovg"]
 edition = "2021"

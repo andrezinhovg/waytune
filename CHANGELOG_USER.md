@@ -6,6 +6,12 @@ A simple overview of new features and improvements.
 
 ---
 
+## Version 1.0.0 (September 13, 2026)
+
+First release published under the Waytune name. No functional changes from 2.6.1 below — this is a version-number reset to mark Waytune's own release history, now that it's a standalone project rather than a fork in progress.
+
+---
+
 ## Version 2.6.1 (March 10, 2026)
 
 ### Improvements

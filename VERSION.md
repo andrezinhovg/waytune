@@ -2,6 +2,15 @@
 
 This project uses a **centralized version management system** with `package.json` as the single source of truth.
 
+> **Note:** The `npm run release` / `npm run version:*` commands below depend on `dev-scripts/release.sh`
+> and `dev-scripts/sync-version.cjs`. That directory is gitignored and was never part of this fork's
+> checkout, so those commands currently fail here. Until they're restored, sync versions manually across
+> the four files listed below and add a `CHANGELOG_USER.md` entry by hand.
+>
+> Versioning restarted at **1.0.0** on 2026-09-13 — Waytune had been continuing the version numbering
+> inherited from its `better-iptv` fork origin, but since no Waytune release had ever been published,
+> this was the only clean point to reset for the standalone project. Don't revert to the old 2.x numbers.
+
 ## How It Works
 
 All version numbers are synchronized across:
@@ -119,7 +128,7 @@ This will update `Cargo.toml` and `tauri.conf.json` to match.
 
 ## Current Version
 
-**0.1.0**
+**1.0.0**
 
 ## Version History
 

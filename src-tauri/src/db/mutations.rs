@@ -101,6 +101,7 @@ pub fn toggle_favorite(conn: &Connection, channel_id: i64) -> Result<()> {
 
 /// Record the last episode/item opened for a channel. Upserts a single row
 /// per channel_id — this is a pointer, not a history log.
+#[allow(clippy::too_many_arguments)]
 pub fn upsert_watch_progress(
     conn: &Connection,
     channel_id: i64,

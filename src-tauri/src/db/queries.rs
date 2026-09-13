@@ -443,6 +443,7 @@ mod tests {
 
     // ========== Watch Progress Tests ==========
 
+    #[allow(clippy::too_many_arguments)]
     fn insert_watch_progress_row(
         conn: &Connection,
         channel_id: i64,

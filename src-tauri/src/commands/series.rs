@@ -47,6 +47,7 @@ pub async fn get_series_info(
 }
 
 #[tauri::command]
+#[allow(clippy::too_many_arguments)]
 pub async fn play_episode_with_season(
     state: State<'_, AppState>,
     server_url: String,

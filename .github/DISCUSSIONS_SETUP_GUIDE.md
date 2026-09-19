@@ -1,10 +1,10 @@
 # GitHub Discussions Setup Guide
 
-Complete guide for setting up GitHub Discussions for Better IPTV.
+Complete guide for setting up GitHub Discussions for Waytune.
 
 ## 🚀 Step 1: Enable Discussions
 
-1. Go to your repository: https://github.com/mewset/better-iptv
+1. Go to your repository: https://github.com/andrezinhovg/waytune
 2. Click **Settings** (top right)
 3. Scroll down to **Features** section
 4. Check ✅ **Discussions**
@@ -19,16 +19,16 @@ GitHub will create default categories. **Replace them** with these custom catego
 | Category | Emoji | Description | Format |
 |----------|-------|-------------|---------|
 | **Announcements** | 📢 | Official project updates and releases | Announcement |
-| **General** | 💬 | General discussion about Better IPTV | Open-ended |
+| **General** | 💬 | General discussion about Waytune | Open-ended |
 | **Ideas** | 💡 | Feature requests and improvements | Open-ended |
 | **Q&A** | ❓ | Questions and help from the community | Q&A |
-| **Show and Tell** | 🎨 | Share your Better IPTV setup or customizations | Open-ended |
+| **Show and Tell** | 🎨 | Share your Waytune setup or customizations | Open-ended |
 | **Bugs** | 🐛 | Discuss potential bugs before reporting | Open-ended |
 
 ### How to Create/Edit Categories
 
 1. Go to **Discussions** tab in your repo
-2. Click **Categories** (right sidebar) or go to: `https://github.com/mewset/better-iptv/discussions/categories`
+2. Click **Categories** (right sidebar) or go to: `https://github.com/andrezinhovg/waytune/discussions/categories`
 3. Click **New category** or **Edit** (pencil icon)
 4. Fill in:
    - **Name**: (e.g., "Bugs")
@@ -45,22 +45,22 @@ Official project updates, releases, and important news from the maintainers. Onl
 
 **General:**
 ```
-General discussion about Better IPTV. Talk about anything related to the project, IPTV, or share experiences.
+General discussion about Waytune. Talk about anything related to the project, IPTV, or share experiences.
 ```
 
 **Ideas:**
 ```
-Suggest new features, improvements, or changes. Discuss what you'd like to see in Better IPTV.
+Suggest new features, improvements, or changes. Discuss what you'd like to see in Waytune.
 ```
 
 **Q&A:**
 ```
-Ask questions about using Better IPTV. Get help from the community with setup, configuration, or troubleshooting.
+Ask questions about using Waytune. Get help from the community with setup, configuration, or troubleshooting.
 ```
 
 **Show and Tell:**
 ```
-Share your Better IPTV setup, customizations, or creative uses. Show the community what you've built!
+Share your Waytune setup, customizations, or creative uses. Show the community what you've built!
 ```
 
 **Bugs:**
@@ -89,18 +89,18 @@ Content:
 ```markdown
 # 💡 Before Suggesting a Feature
 
-Thanks for wanting to improve Better IPTV! Please follow these guidelines:
+Thanks for wanting to improve Waytune! Please follow these guidelines:
 
 ## ✅ Checklist
 
 1. **Search existing ideas**
-   - Check [existing discussions](https://github.com/mewset/better-iptv/discussions/categories/ideas) to avoid duplicates
-   - Check [feature request issues](https://github.com/mewset/better-iptv/issues?q=is%3Aissue+label%3Aenhancement)
+   - Check [existing discussions](https://github.com/andrezinhovg/waytune/discussions/categories/ideas) to avoid duplicates
+   - Check [feature request issues](https://github.com/andrezinhovg/waytune/issues?q=is%3Aissue+label%3Aenhancement)
 
 2. **Is this the right place?**
    - **New feature**: Post here in Ideas
-   - **Bug fix**: Use [Bug Report](https://github.com/mewset/better-iptv/issues/new?template=bug_report.yml)
-   - **Question**: Use [Q&A category](https://github.com/mewset/better-iptv/discussions/categories/q-a)
+   - **Bug fix**: Use [Bug Report](https://github.com/andrezinhovg/waytune/issues/new?template=bug_report.yml)
+   - **Question**: Use [Q&A category](https://github.com/andrezinhovg/waytune/discussions/categories/q-a)
 
 3. **Describe your idea clearly**
    - What problem does it solve?
@@ -117,13 +117,13 @@ Thanks for wanting to improve Better IPTV! Please follow these guidelines:
 ## ⚡ From Idea to Implementation
 
 Popular ideas may be promoted to official feature requests:
-- Create formal [Feature Request Issue](https://github.com/mewset/better-iptv/issues/new?template=feature_request.yml)
+- Create formal [Feature Request Issue](https://github.com/andrezinhovg/waytune/issues/new?template=feature_request.yml)
 - Gets added to the roadmap
 - Community can contribute implementation
 
 ---
 
-**Let's build Better IPTV together! 🚀**
+**Let's build Waytune together! 🚀**
 ```
 
 ### For "Q&A" Category
@@ -132,15 +132,15 @@ Title: `📌 How to Ask Good Questions`
 
 Content:
 ```markdown
-# ❓ Getting Help with Better IPTV
+# ❓ Getting Help with Waytune
 
 Welcome! Here's how to get the best help from the community:
 
 ## ✅ Before Asking
 
 1. **Check the documentation**
-   - Read the [README](https://github.com/mewset/better-iptv#readme)
-   - Check the [FAQ](https://github.com/mewset/better-iptv#-frequently-asked-questions-faq)
+   - Read the [README](https://github.com/andrezinhovg/waytune#readme)
+   - Check the [FAQ](https://github.com/andrezinhovg/waytune#-frequently-asked-questions-faq)
 
 2. **Search existing discussions**
    - Your question might already be answered
@@ -148,13 +148,13 @@ Welcome! Here's how to get the best help from the community:
 
 3. **Is this really a question?**
    - **Question**: How to do something, why something happens
-   - **Bug**: Something broken → Use [Bug Report](https://github.com/mewset/better-iptv/issues/new?template=bug_report.yml)
-   - **Feature request**: Something missing → Use [Ideas](https://github.com/mewset/better-iptv/discussions/categories/ideas)
+   - **Bug**: Something broken → Use [Bug Report](https://github.com/andrezinhovg/waytune/issues/new?template=bug_report.yml)
+   - **Feature request**: Something missing → Use [Ideas](https://github.com/andrezinhovg/waytune/discussions/categories/ideas)
 
 ## 📝 Good Questions Include
 
 - **Clear title**: "How to import M3U from URL?" (not "Help pls")
-- **System info**: OS, Better IPTV version
+- **System info**: OS, Waytune version
 - **What you tried**: Steps you already attempted
 - **Expected vs actual**: What you wanted vs what happened
 - **Logs** (if error): See log locations in README
@@ -197,11 +197,11 @@ Update your README.md to link to Discussions:
 ```markdown
 ## 💬 Community & Support
 
-- 💡 [Feature Ideas](https://github.com/mewset/better-iptv/discussions/categories/ideas) - Suggest new features
-- ❓ [Q&A](https://github.com/mewset/better-iptv/discussions/categories/q-a) - Ask questions
-- 🐛 [Bug Discussions](https://github.com/mewset/better-iptv/discussions/categories/bugs) - Discuss potential issues
-- 🎨 [Show and Tell](https://github.com/mewset/better-iptv/discussions/categories/show-and-tell) - Share your setup
-- 📢 [Announcements](https://github.com/mewset/better-iptv/discussions/categories/announcements) - Project updates
+- 💡 [Feature Ideas](https://github.com/andrezinhovg/waytune/discussions/categories/ideas) - Suggest new features
+- ❓ [Q&A](https://github.com/andrezinhovg/waytune/discussions/categories/q-a) - Ask questions
+- 🐛 [Bug Discussions](https://github.com/andrezinhovg/waytune/discussions/categories/bugs) - Discuss potential issues
+- 🎨 [Show and Tell](https://github.com/andrezinhovg/waytune/discussions/categories/show-and-tell) - Share your setup
+- 📢 [Announcements](https://github.com/andrezinhovg/waytune/discussions/categories/announcements) - Project updates
 ```
 
 ## ✅ Completion Checklist
@@ -218,11 +218,11 @@ Update your README.md to link to Discussions:
 
 After setup, post your first announcement:
 
-**Title:** `🎉 Welcome to Better IPTV Discussions!`
+**Title:** `🎉 Welcome to Waytune Discussions!`
 
 **Content:**
 ```markdown
-# Welcome to the Better IPTV Community! 🎉
+# Welcome to the Waytune Community! 🎉
 
 GitHub Discussions is now live! This is your space to:
 
@@ -234,9 +234,9 @@ GitHub Discussions is now live! This is your space to:
 
 ## 📌 Important Links
 
-- [Bug Reports](https://github.com/mewset/better-iptv/issues/new?template=bug_report.yml) - For confirmed bugs
-- [Feature Requests](https://github.com/mewset/better-iptv/issues/new?template=feature_request.yml) - For formal feature proposals
-- [Documentation](https://github.com/mewset/better-iptv#readme) - README and FAQ
+- [Bug Reports](https://github.com/andrezinhovg/waytune/issues/new?template=bug_report.yml) - For confirmed bugs
+- [Feature Requests](https://github.com/andrezinhovg/waytune/issues/new?template=feature_request.yml) - For formal feature proposals
+- [Documentation](https://github.com/andrezinhovg/waytune#readme) - README and FAQ
 
 ## 🤝 Community Guidelines
 
@@ -249,7 +249,6 @@ Let's build an amazing IPTV community together! 🚀
 
 ---
 
-*P.S. If you enjoy Better IPTV, consider [supporting the project on Ko-fi](https://ko-fi.com/R6R21I53PD)!* ☕
 ```
 
 ---

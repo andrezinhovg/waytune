@@ -1,6 +1,6 @@
 # GitHub Infrastructure Setup
 
-This document explains the GitHub infrastructure setup for Better IPTV.
+This document explains the GitHub infrastructure setup for Waytune.
 
 ## 📋 Issue & PR Templates
 
@@ -220,7 +220,7 @@ Comprehensive label schema (apply manually in GitHub Settings):
 3. Or use a tool like [github-label-sync](https://github.com/Financial-Times/github-label-sync):
    ```bash
    npm install -g github-label-sync
-   github-label-sync --access-token YOUR_TOKEN mewset/better-ip-tv .github/labels.yml
+   github-label-sync --access-token YOUR_TOKEN andrezinhovg/waytune .github/labels.yml
    ```
 
 ## 📊 GitHub Settings Recommendations
